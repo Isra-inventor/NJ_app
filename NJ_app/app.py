@@ -1,12 +1,12 @@
 from keras.models import model_from_json
 import tensorflow as tf
 def init():
-  json_file = open('/content/model.json','r')
+  json_file = open('/NJ_app/model.json','r')
   loaded_model_json = json_file.read()
   json_file.close()
   loaded_model = model_from_json(loaded_model_json)
   #load weights into new model
-  loaded_model.load_weights("/content/model (1).h5")
+  loaded_model.load_weights("/NJ_app/model (1).h5")
   print("Loaded Model from disk")
   #compile and evaluate loaded model
   loaded_model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
